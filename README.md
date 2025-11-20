@@ -7,7 +7,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.0-orange.svg?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![PyG](https://img.shields.io/badge/PyG-2.6.1-green.svg?style=flat-square&logo=pyg&logoColor=white)](https://www.pyg.org/)
 
-[Abstract](#abstract) • [Methodology](#methodology) • [Installation](#installation) • [Quick Start](#quick-start) • [Contact](#contact)
+[Abstract](#-abstract) • [Methodology](#-methodology) • [Installation](#%EF%B8%8F-installation) • [Quick Start](#-quick-start) • [Contact](#-contact)
 
 </div>
 
@@ -15,9 +15,13 @@
 
 ## 🧬 Abstract
 
+<p align="justify">
 Gene regulatory networks (GRNs) play a crucial role in revealing cellular state transitions, understanding regulatory mechanisms, and exploring the mechanisms of disease occurrence. With the development of single-cell sequencing technologies, accurately inferring GRNs from complex and high-dimensional single-cell transcriptomic data has become one of the core challenges in current research.
+</p>
 
-**ATFGRN** is a multi-perspective fusion deep learning model designed to address this challenge. It integrates diverse expression and structural information to improve the accuracy and robustness of GRN prediction. By constructing a **structure–expression–similarity tri-perspective framework**, ATFGRN fully integrates local topological structures, expression-contextual regulatory information, and the potential regulation between genes with similar expression patterns. Evaluations on single-cell transcriptomic datasets demonstrate that ATFGRN outperforms several mainstream methods in terms of AUROC and AUPRC metrics.
+<p align="justify">
+<strong>ATFGRN</strong> is a multi-perspective fusion deep learning model designed to address this challenge. It integrates diverse expression and structural information to improve the accuracy and robustness of GRN prediction. By constructing a <strong>structure–expression–similarity tri-perspective framework</strong>, ATFGRN fully integrates local topological structures, expression-contextual regulatory information, and the potential regulation between genes with similar expression patterns. Evaluations on single-cell transcriptomic datasets demonstrate that ATFGRN outperforms several mainstream methods in terms of AUROC and AUPRC metrics.
+</p>
 
 ---
 
