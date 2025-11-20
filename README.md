@@ -7,7 +7,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5.0-orange.svg?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![PyG](https://img.shields.io/badge/PyG-2.6.1-green.svg?style=flat-square&logo=pyg&logoColor=white)](https://www.pyg.org/)
 
-[Abstract](#-abstract) • [Methodology](#-methodology) • [Installation](#-installation) • [Quick Start](#-quick-start) • [Contact](#-contact) 
+[Abstract](#abstract) • [Methodology](#methodology) • [Installation](#installation) • [Quick Start](#quick-start) • [Contact](#contact)
 
 </div>
 
