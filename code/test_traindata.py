@@ -5,6 +5,7 @@ from collections import Counter
 from sklearn.model_selection import train_test_split
 import argparse
 
+# Argument parsing for dataset configuration
 parser = argparse.ArgumentParser()
 parser.add_argument('--ratio', type=float, default=0.5, help='the ratio of the training set')
 parser.add_argument('--num', type=int, default= 500, help='network scale')
@@ -15,6 +16,10 @@ args = parser.parse_args()
 
 def Hard_Negative_Specific_train_test_val(label_file, Gene_file, TF_file, train_set_file,val_set_file,test_set_file,
                                           ratio=args.ratio, p_val=args.p_val):
+
+    """
+    Constructs negative samples and splits data into Train/Val/Test sets
+    """
     label = pd.read_csv(label_file, index_col=0)
     gene_set = pd.read_csv(Gene_file, index_col=0)['index'].values
     tf_set = pd.read_csv(TF_file, index_col=0)['index'].values

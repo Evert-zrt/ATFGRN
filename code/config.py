@@ -2,7 +2,9 @@ import torch
 import argparse
 from utils.train_utils1 import add_flags_from_config
 
+# Define the main configuration dictionary
 config_args = {
+# Hyperparameters for model training
     'training_config': {
         'runs': (10, int, 'num of runs'),
         'lr': (0.001, float, 'learning rate'),
@@ -15,6 +17,7 @@ config_args = {
         'ratio':(0.4,float,'ratio of training data'),
         'metric': ('auc_ap', str, 'performance metric to use'),
     },
+    # Settings related to the dataset and network structure
     'data_config': {
         'netType':('Specific', str, 'which network to use'),
         'num': ('500', str, 'which network to use'),
@@ -24,7 +27,7 @@ config_args = {
         'test_percent': (1.0, float, 'the ratio of links of the split edges'),
     }
 }
-
+# Initialize the argument parser
 parser = argparse.ArgumentParser()
 for _, config_dict in config_args.items():
     parser = add_flags_from_config(parser, config_dict)
