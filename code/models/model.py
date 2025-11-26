@@ -57,7 +57,7 @@ class PatchySANPooling(torch.nn.Module):
 
 
 
-class SubgraphContrastiveEncoder(nn.Module):
+class SubgraphEncoder(nn.Module):
     """
         View 1: Encodes local subgraphs using GCN layers and PatchySAN pooling.
         Used to capture local topological patterns around target links.
@@ -145,7 +145,7 @@ class ATFGRN(torch.nn.Module):
         super(ATFGRN, self).__init__()
 
         # 1. Subgraph Encoder (Local View)
-        self.gclencoder = SubgraphContrastiveEncoder(train_dataset,in_channels, hidden_channels, out_channels, num_layers=num_layers,k=0.2)
+        self.gclencoder = SubgraphEncoder(train_dataset,in_channels, hidden_channels, out_channels, num_layers=num_layers,k=0.2)
         # 2. Multi-Scale GNN (KNN Graph View)
         self.Mgcn = MultiScaleGNN(in_channels=32, hidden_channels=hidden_channels, out_channels=out_channels,
                                   num_layers=num_layers)
