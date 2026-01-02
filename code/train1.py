@@ -172,9 +172,9 @@ def run(args):
     for epoch in range(1, args.epochs):
         schedular.step()
         loss, result = train(model, train_loader, grn_data, knn_graph, device, optimizer, train_dataset)
-        val_loss, val_results = test(args, val_loader, grn_data, knn_graph, model, device, val_dataset)
+        _, val_results = test(args, val_loader, grn_data, knn_graph, model, device, val_dataset)
         train_auc, train_ap = result['AUC'], result['AP']
-        test_loss, test_results = test(args, test_loader, grn_data, knn_graph, model, device, test_dataset)
+        _, test_results = test(args, test_loader, grn_data, knn_graph, model, device, test_dataset)
         test_auc, test_ap = test_results['AUC'], test_results['AP']
 
         # Check for improvement (Early Stopping Logic)
@@ -192,8 +192,7 @@ def run(args):
 
             logger.info(
                 f'Epoch: {epoch:02d}, trainLoss: {loss:.4f}, train_AUC: {train_auc:.4f}, train_AP: {train_ap:.4f},'
-                f'valLoss: {val_loss:.4f},Val_AUC: {val_auc:.4f}, Val_AP: {val_ap:.4f}, '
-                f'testLoss: {test_loss:.4f},Test_AUC: {test_auc:.4f}, Test_AP: {test_ap:.4f}'
+                f'Val_AUC: {val_auc:.4f}, Val_AP: {val_ap:.4f}'
             )
             if patience >= args.patience:
                 logger.info('Early Stop! Best Val AUC: {:.4f}, Best Val AP: {:.4f}'.format(best_test_auc, best_test_ap))
